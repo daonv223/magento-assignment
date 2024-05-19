@@ -1,0 +1,47 @@
+<?php
+/** @var \Vendor\Exchange\Block\Index $block */
+$data = $block->getExchangeRateList();
+?>
+<h1><?= $data['DateTime'] ?></h1>
+<table id="exchange">
+    <tr>
+        <th>Currency Name</th>
+        <th>Currency Code</th>
+        <th>Buy</th>
+        <th>Transfer</th>
+        <th>Sell</th>
+    </tr>
+    <?php foreach ($data['Exrates'] as $exrate): ?>
+    <tr>
+        <td><?= $exrate['CurrencyName'] ?></td>
+        <td><?= $exrate['CurrencyCode'] ?></td>
+        <td><?= $exrate['Buy'] ?></td>
+        <td><?= $exrate['Transfer'] ?></td>
+        <td><?= $exrate['Sell'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+<style>
+    #exchange {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #exchange td, #exchange th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #exchange tr:nth-child(even){background-color: #f2f2f2;}
+
+    #exchange tr:hover {background-color: #ddd;}
+
+    #exchange th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>

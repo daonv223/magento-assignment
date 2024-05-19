@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="general">
+            <group id="weather" translate="label" type="text" sortOrder="1000" showInDefault="1">
+                <label>Open Weather API</label>
+                <field id="api_key" translate="label" type="text" sortOrder="10" showInDefault="1">
+                    <label>API Key</label>
+                </field>
+                <field id="city" translate="label" type="text" sortOrder="10" showInDefault="1">
+                    <label>City</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

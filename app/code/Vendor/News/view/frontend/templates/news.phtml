@@ -1,0 +1,30 @@
+<?php
+/** @var \Vendor\News\Block\News $block */
+?>
+<div class="news" data-bind="scope: 'news'">
+    <h3 data-bind="text: title"></h3>
+    <h4 data-bind="text: publishDate"></h4>
+    <div class="item-list" data-bind="foreach: items">
+        <div class="card">
+            <span class="blog-time" data-bind="text: $data.pubDate.split('+')[0].trim()"></span>
+            <div class="blog-title" data-bind="text: $data.title"></div>
+            <div class="description" data-bind="html: $data.description"></div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "news": {
+                        "component": "Vendor_News/js/news",
+                        "config": {
+                             "fetchUrl": "<?= /* @noEscape */ $block->getFetchUrl() ?>"
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
